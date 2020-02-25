@@ -1,4 +1,5 @@
-#displaybutton{
-    text-align: center;
-    
-}
+p {
+    display: inline-block;
+    margin: .2em 3rem;
+    font: 2em Roboto;
+  }

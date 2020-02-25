@@ -9,7 +9,8 @@ import { DisplaystudentComponent } from './displaystudent/displaystudent.compone
 import { RouterModule } from '@angular/router';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { HttpClientModule } from '@angular/common/http';
+  
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    NgbModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

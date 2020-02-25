@@ -1,1 +1,40 @@
-<p>updatestudent works!</p>
+<div *ngIf="studentdetail">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update Details</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" [(ngModel)]="studentdetail.name" id="name">
+            <label for="Name">Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="number" [(ngModel)]="studentdetail.id" id="userid" disabled = true>
+            <label for="userid">User Id</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" [(ngModel)]="studentdetail.email" id="email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" [(ngModel)]="studentdetail.department" id="department">
+            <label for="department">Department</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"
+          (click)="onClick(studentdetail)" routerLink = "/display">update</button>
+      </div>
+    </div>
+
+  </div>
+</div>

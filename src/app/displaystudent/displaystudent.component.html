@@ -1,34 +1,36 @@
 <h1>List Of Students</h1>
 
-<div *ngIf = "studlist.length > 0; else notShow">
-    <table class  ="stripped">
-        <thead>
-          <tr>
-              <th>Id</th>
-              <th>Student Name</th>
-              <th>Email</th>
-              <th>Department</th>
-              <th>Action</th>
-          </tr>
-        </thead>
-    
-        <tbody>
-          <tr *ngFor = "let student of studlist">
-            <td>{{student.studentid}}</td>
-            <td>{{student.name}}</td>
-            <td>{{student.email}}</td>
-            <td>{{student.department}}</td>
-            <td><button type="button" class="btn btn-xs" (click)="editDialog.open(student)">Edit...</button></td>
-          </tr>
-        </tbody>
-      </table>
+<div *ngIf="studlist.length > 0; else notShow">
+  <table class="stripped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let student of studlist">
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.department}}</td>
+        <td><button type="button" class="btn btn-xs" (click)="onClick(student)"
+            [routerLink]="['update',student.id]">Edit</button></td>
+        <td><button type="button" class="btn btn-xs" (click)="onClickDelete(student)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <app-updatestudent *ngIf="show" [studentdetail]="selectedStudent" (closeComponent)="onDelete($event)">
+  </app-updatestudent>
+
+
 </div>
 <ng-template #notShow>
-    <p>
-     Nothing to display
-    </p>
-  </ng-template>
-
-
-
-  
+  <p>
+    Nothing to display
+  </p>
+</ng-template>

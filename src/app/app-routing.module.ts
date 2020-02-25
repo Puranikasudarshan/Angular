@@ -13,7 +13,7 @@ export const routes: Routes = [
   {path:'welcome',component:WelcomeComponent},
   {path:'register',component:CreateStudentComponent },
   {path:'display',component:DisplaystudentComponent,children:[
-    {path:'update',component:UpdatestudentComponent}
+    {path:'update/:id',component:UpdatestudentComponent}
   ]},
   {path:'**',component:PagenotfoundComponent}
 ];

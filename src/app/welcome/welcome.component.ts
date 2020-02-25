@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  date:Date;
+  date: Date;
   constructor() { }
 
 
 
   ngOnInit() {
-    setInterval(()=> {
+    setInterval(() => {
       this.date = new Date();
-    },1000)
+    }, 1000)
   }
 
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Student } from '../Student';
+import { StudService } from '../stud.service';
 
 @Component({
   selector: 'app-updatestudent',
@@ -8,7 +9,22 @@ import { Student } from '../Student';
 })
 export class UpdatestudentComponent implements OnInit {
 
-  constructor() { }
+  @Input() studentdetail: Student;
+  @Output() closeComponent = new EventEmitter<string>();
+  constructor(private stud: StudService) { }
+
+  onClick(updatedDetails: Student) {
+    let result = false;
+    result = this.stud.update(updatedDetails);
+    if (result) {
+      alert("updated successfully");
+    }
+    else {
+      alert("something went wrong");
+
+    }
+    this.closeComponent.emit("updated successfull");
+  }
 
   ngOnInit() {
   }
